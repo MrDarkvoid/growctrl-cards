@@ -1,0 +1,4 @@
+# Das ausgelieferte Bundle ist ein generiertes/vendored Artefakt (enthält u.a. lit-html):
+# aus Sprachstatistik & Diffs ausnehmen; CodeQL überspringt linguist-generated experimentell.
+growctrl-cards.js linguist-generated=true
+growctrl-cards.js linguist-vendored=true
