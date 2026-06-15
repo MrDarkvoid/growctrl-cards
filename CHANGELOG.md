@@ -25,9 +25,14 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
   haben **Vorrang** vor positiven Ereignissen – der Status bleibt ehrlich „gestoppt".
 - **8 Farb-Konzepte** (Paletten) im Stil-Editor; Transparenz bleibt Karten-Option.
 - **Livestream/Bild** in der Stations-Karte (Kamera-Entität oder Bild-URL).
-- **Trendpfeile** + pH-**Trendlinie**; **Sensorkacheln** vollständig anklickbar.
+- **Trendpfeile** skalieren **dynamisch in Größe und Farbe** mit der Trendstärke; pH-**Trendlinie**;
+  **Sensorkacheln** vollständig anklickbar.
+- **Stations-Karte mit Expandern:** Aktoren, Sensorwerte und Protokoll einzeln **klappbar** –
+  zugeklappt nur Statuspunkte (Temp/RH mit Wert), kompakte Aktor-Punkte bzw. neuester Log-Eintrag.
+- **„Keimstart zurücksetzen"** direkt aus den Stations-Einstellungen (nutzt die neue Button-Entität).
 - **Schloss-Symbol** bei „Bestätigen"-Aktoren (Stations- + Aktoren-Karte).
-- **CheckUp:** leere, nicht klickbare Zellen bei fehlenden Entitäten; **Legende unten**.
+- **CheckUp:** leere, nicht klickbare Zellen bei fehlenden Entitäten; bei **Gate aus** oder Phase
+  **„Aus"** werden **alle** Punkte der Station (inkl. Sensoren) **ausgegraut**; **Legende unten**.
 - **Lizenzfeld korrigiert** (`package.json`): **GC-SAL-1.0** (zuvor versehentlich „MIT").
 
 Konfiguration je Karte:
