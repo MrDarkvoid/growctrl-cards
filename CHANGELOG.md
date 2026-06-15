@@ -21,6 +21,13 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
   Pflanzen-Felder entfallen – kommt aus dem Preset). CheckUp-Editor: Stationsliste + Sektions-Schalter.
 - **Idealbereiche aus der Integration.** pH/EC sind reine Lesewerte; die Färbung kommt aus dem
   Pflanzen-Preset (Systemtyp + Pflanze) über den Datenbus der Station.
+- **Phase „Aus".** Stoppt die Station in der Karte (nur noch Protokoll sichtbar). Gate aus / „Aus"
+  haben **Vorrang** vor positiven Ereignissen – der Status bleibt ehrlich „gestoppt".
+- **8 Farb-Konzepte** (Paletten) im Stil-Editor; Transparenz bleibt Karten-Option.
+- **Livestream/Bild** in der Stations-Karte (Kamera-Entität oder Bild-URL).
+- **Trendpfeile** + pH-**Trendlinie**; **Sensorkacheln** vollständig anklickbar.
+- **Schloss-Symbol** bei „Bestätigen"-Aktoren (Stations- + Aktoren-Karte).
+- **CheckUp:** leere, nicht klickbare Zellen bei fehlenden Entitäten; **Legende unten**.
 - **Lizenzfeld korrigiert** (`package.json`): **GC-SAL-1.0** (zuvor versehentlich „MIT").
 
 Konfiguration je Karte:
