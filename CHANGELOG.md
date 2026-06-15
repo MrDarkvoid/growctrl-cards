@@ -29,6 +29,9 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
   **Sensorkacheln** vollständig anklickbar.
 - **Stations-Karte mit Expandern:** Aktoren, Sensorwerte und Protokoll einzeln **klappbar** –
   zugeklappt nur Statuspunkte (Temp/RH mit Wert), kompakte Aktor-Punkte bzw. neuester Log-Eintrag.
+- **Aufgaben** der Station (aus der Zelt-Aufgabenliste) als klappbarer Bereich; Tippen erledigt sie.
+- **Responsive Info-Größe:** Versorgungszeilen, Sensorwerte und Überschriften skalieren mit der Kartenbreite
+  (Handy kompakt, PC größer); Trendpfeile zusätzlich nach Gerät.
 - **„Keimstart zurücksetzen"** direkt aus den Stations-Einstellungen (nutzt die neue Button-Entität).
 - **Schloss-Symbol** bei „Bestätigen"-Aktoren (Stations- + Aktoren-Karte).
 - **CheckUp:** leere, nicht klickbare Zellen bei fehlenden Entitäten; bei **Gate aus** oder Phase
