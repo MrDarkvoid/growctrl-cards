@@ -5,6 +5,13 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.0.1] — 2026-06-15
+
+- **Aktoren-Bereich** klappt **nicht mehr bei jedem Aufruf von selbst auf** (alle Bereiche standardmäßig zu).
+- **Responsive Info-Größe verstärkt** – Versorgungszeilen, Sensorwerte, Überschriften **und Statuspunkte**
+  skalieren deutlicher mit der Kartenbreite (PC spürbar größer als Handy).
+- Versionssprung umgeht den Browser-/HACS-Cache (alte `growctrl-cards.js` wird sonst weiterverwendet).
+
 ## [4.0.0] — „Station = Pflanze": neue Stations- und CheckUp-Karte
 
 - **Stations-Karte neu.** Zwei Dropdowns (Pflanze + Phase mit **Tagzähler**), **Phasen-Empfehlung**
