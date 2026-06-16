@@ -5,6 +5,22 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.2.0] — 2026-06-16
+
+- **Trend-Indikatoren als einheitliche Dreiecke** (hoch / waagerecht / runter) an den Sensorwerten,
+  am PC größer dargestellt.
+- Versionssprung erzwingt das Neuladen der Karten-Datei (umgeht den Browser-/HACS-Cache), damit die
+  4.1.0-Funktionen (deutsche Phasen + Tagesgrenzen, Expander-Standard im Editor, pH/EC-Verlaufs-Charts)
+  zuverlässig sichtbar werden.
+
+## [4.1.0] — 2026-06-16
+
+- **Deutsche Phasennamen + „· bis Tag X" pro Pflanzenart** im Phasen-Dropdown der Stations-Karte
+  (Blattgemüse/Kräuter ohne Blüte/Spülen).
+- **Stations-Karte:** Editor-Schalter **„Bereiche beim Laden geöffnet"** (Standard: zu).
+- **Sensor-Karte:** optionale **Verlaufs-Charts** (z.B. pH & EC) mit Sollband, GUI-konfigurierbar.
+- **Trendpfeile → Dreiecke** (hoch/waagerecht/runter).
+
 ## [4.0.1] — 2026-06-15
 
 - **Aktoren-Bereich** klappt **nicht mehr bei jedem Aufruf von selbst auf** (alle Bereiche standardmäßig zu).
