@@ -5,6 +5,12 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.4.0] — 2026-06-16
+
+- **Karten-Vorschauen** im Picker zeigen jetzt Demo-Daten (Sensors, Controls, Status, History) –
+  gefüllt statt leer beim Hinzufügen.
+- Passt zum neuen Integration-Service `growctrl.import_config` (Backup-Wiederherstellung).
+
 ## [4.3.0] — 2026-06-16
 
 - **Tank-Reichweiten-Prognose** in Station- und Tank-Karte („Reichweite: ~X Tage“ aus dem Verbrauch).
