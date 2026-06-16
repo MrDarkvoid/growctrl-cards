@@ -5,6 +5,12 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.3.0] — 2026-06-16
+
+- **Tank-Reichweiten-Prognose** in Station- und Tank-Karte („Reichweite: ~X Tage“ aus dem Verbrauch).
+- **Neue Schnell-Aktionen-Karte** (`growctrl-actions-card`): konfigurierbare Buttons, die Services aufrufen
+  (z. B. „alle Lichter aus“ oder `growctrl.export_config`) – mit optionaler Bestätigung.
+
 ## [4.2.0] — 2026-06-16
 
 - **Trend-Indikatoren als einheitliche Dreiecke** (hoch / waagerecht / runter) an den Sensorwerten,
