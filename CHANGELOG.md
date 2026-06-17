@@ -5,6 +5,17 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.12.0] — 2026-06-17
+
+- **Chart-Zeitachse:** Die X-Achse aller Karten-Charts (Zelt, Hero, Metrik, Sensoren) skaliert jetzt mit der eingestellten Stundenzahl; längere Zeiträume sind feiner aufgelöst.
+- **Trendpfeile:** reagieren auf ein kurzes jüngstes Zeitfenster (≈ letzte Stunde) statt über die halbe Historie – deutlich schneller.
+- **Stations-Kopfzeile:** Titel + Buttons in einer Zeile, Untertitel (Pflanze · Leistung · Status) darunter über die volle Breite – kein zerrissenes Layout mehr auf dem Handy.
+- **Zelt-Karte:** Im Klima-Automatik-Modus (Pflanzen-Gewichtung) ist das Phasen-Dropdown gesperrt und zeigt „Automatik" mit Schloss – passend zur Integration.
+- **Hero-Karte:** Logo/Bild-URL funktioniert wieder zuverlässig (Fehler-State wird bei URL-Änderung zurückgesetzt).
+- **Station:** Protokoll-Bereich standardmäßig eingeklappt.
+
+---
+
 ## [4.11.0] — 2026-06-17
 
 - **Editor-Initialisierung – Fix:** „Standard an“-Schalter (VPD-Chart, Sensoren-/Steuerungs-/Zelt-Sektion, Einstellungen, Protokoll) zeigten bei noch nicht gesetztem Wert fälschlich AUS, obwohl die Karte den Inhalt anzeigt. Der Editor spiegelt jetzt den echten Default.
