@@ -5,6 +5,16 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.11.0] — 2026-06-17
+
+- **Editor-Initialisierung – Fix:** „Standard an“-Schalter (VPD-Chart, Sensoren-/Steuerungs-/Zelt-Sektion, Einstellungen, Protokoll) zeigten bei noch nicht gesetztem Wert fälschlich AUS, obwohl die Karte den Inhalt anzeigt. Der Editor spiegelt jetzt den echten Default.
+- **Stations-Kopfzeile:** bricht auf schmalen Handys sauber um statt unter die Kopf-Buttons zu laufen (Karten-Kopf oben ausgerichtet).
+- **Stations-Aktoren:** Icon/Name/Status skalieren mit – auf dem PC nicht mehr winzig.
+- **Hero-Karte:** Zelt/Klima-Schalter gleichmäßig verteilt (wie die Zelt-Karte).
+- **Zelt-Karte:** Pfeil im Phasen-Dropdown rechtsbündig.
+
+---
+
 ## [4.10.0] — 2026-06-17
 
 - **Stations-Kopfzeile** zeigt jetzt **Pflanze · Leistung · Status** statt des Tages
