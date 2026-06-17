@@ -5,6 +5,85 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.10.0] — 2026-06-17
+
+- **Stations-Kopfzeile** zeigt jetzt **Pflanze · Leistung · Status** statt des Tages
+  (der Tag steht bereits im Phasen-Dropdown). Die Leistung erscheint nur, wenn ein
+  Leistungssensor konfiguriert ist; generische Stationen ohne Pflanze zeigen Leistung · Status.
+- **Klima-Phase-Dropdown der Zelt-Karte** mit deutschen Labels
+  (Automatik / Anzucht / Wachstum / Blüte / Trocknung) – wie in der Stations-Karte.
+- **Ziel-Kacheln in der Zelt-Karte:** im Automatik-Klimamodus zeigen „Ziel VPD“, „Ziel RH“
+  (und „Ziel Temp“ bei Heizung) die berechneten Sollwerte; klickbar für Verlauf/Details.
+
+> Reines Karten-Update – die Integration bleibt 4.9.0 (kein HA-Neustart nötig, nur Browser-Cache leeren).
+
+---
+
+## [4.9.0] — 2026-06-17
+
+- **Automatik-Klimamodus (pflanzengesteuert), pro Zelt umschaltbar** (im Setup und im
+  Options-Dialog, ohne Neustart):
+  - **Automatik:** die Klima-Sollwerte (VPD/RH/Temp) werden aus den Pflanzen der Stationen
+    **gewichtet** berechnet – 1 Station = 1 Stimme, je Station Pflanze × aktuelle Phase
+    (Phase „Aus“ zählt nicht mit). Die Klima-Phase ist dann fest „Auto“; die manuellen
+    Sollwert-Number-Entitäten entfallen.
+  - **Manuell:** unverändertes bisheriges Verhalten (selbst definierte Sollwerte je Phase).
+  - **Migration:** bestehende Zelte bleiben auf **Manuell** (keine Überraschung beim Update),
+    neue Zelte starten auf **Automatik**.
+- **Ziel-Sensoren (nur Automatik):** „Ziel VPD“ und „Ziel RH“ (Zustand = Bandmitte, `min`/`max`
+  als Attribute), „Ziel Temp“ bei vorhandener Zelt-Heizung. Der VPD-Sensor liefert die berechneten
+  Sollwerte zusätzlich im Attribut `sollwerte` – bestehende Karten zeigen sie damit automatisch.
+- **Beispiel `examples/plants.example.yaml`:** vollständige Kopie aller eingebauten Presets als
+  Vorlage für die optionale `/config/growctrl/plants.yaml`.
+
+---
+
+## [4.8.0] — 2026-06-17
+
+- **Optionale Pflanzen-Datei:** `/config/growctrl/plants.yaml` (oder `.json`) kann eigene Pflanzen
+  ergänzen oder eingebaute überschreiben (pH, EC, DLI, Phasentage und Klima-Ziele je Phase). Fehlt die
+  Datei oder ein einzelnes Feld, gelten die eingebauten Presets als Fallback (deep-merge). Die
+  Pflanzen-Dropdowns lesen die zusammengeführte Liste.
+- **Presets um Klima-Ziele erweitert:** jede Pflanze trägt jetzt VPD-/RH-/Temp-Sollwerte je Phase –
+  Grundlage für den kommenden pflanzengesteuerten Automatik-Klimamodus (Stufe 2).
+- **Service `growctrl.reload_plants`:** lädt die Pflanzen-Datei zur Laufzeit neu und aktualisiert die
+  Dropdowns ohne Neustart.
+
+---
+
+## [4.7.0] — 2026-06-16
+
+- **Aktive Zelt-Heizung (Klimasteuerung):** die Zelt-Heizung (`heater_switches`) wird jetzt aktiv geregelt –
+  **Zweipunkt mit Hysterese** auf den Zelt-Temp-Sensor, **Temperatur-Ziel je Phase** (neue Number-Entitäten,
+  nur wenn eine Heizung konfiguriert ist) + **Hysterese**. Komplette Sicherheitskette wie bei der Heizmatte:
+  Sperre (Zelt/Klima aus → aus), Sensor-Guard, Übertemperatur-Not-Aus (Ziel+5 K bzw. 40 °C), Plausibilitäts-
+  Watchdog. Befeuchter/Entfeuchter/Abluft arbeiten unverändert weiter mit den vorhandenen Schaltern.
+- **Karten skalieren nach Kartenbreite (Container-Queries):** die responsive Größenanpassung hängt jetzt an der
+  **echten Kartenbreite** statt am Viewport. Dadurch passt **jede Karte** in jeder Breite – inkl. der schmalen
+  Karten-Picker-Vorschau, in der vorher Werte/Beschriftungen über den Rand liefen.
+
+## [4.6.0] — 2026-06-16
+
+- **Sensor-Karte – pH/EC mit Zonen direkt aus der Integration:** neue Felder **Zelt + Station**;
+  pro Chart eine **Quelle** (eigener Sensor / **pH** / **EC**) und eine **Darstellung**
+  (**Verlauf** als Linie mit Sollband ODER **Zonen-Balken** schlecht/ideal/gut wie in der
+  Station-Karte). Bei pH/EC kommen Wert und Bereiche automatisch aus der **gewählten Pflanze** –
+  kein Sensor nötig.
+- **Karten-Vorschau – Hero & KPIs:** KPI-Werte skalieren jetzt nach **Kartenbreite** (Container-Query)
+  statt nach Viewport; in der schmalen Karten-Picker-Vorschau laufen Wert/Einheit nicht mehr über den
+  Rand.
+
+## [4.5.0] — 2026-06-16
+
+- **Station-Karte – Pflanze in die Einstellungen:** das Pflanzen-Dropdown sitzt jetzt schlicht im
+  Einstellungsbereich (Zahnrad); die **Phase** steht oben wieder in voller Breite.
+- **Station-Karte – Tag im Kopf:** unter dem Namen erscheint neben dem Status der aktuelle Tag
+  (z. B. „Tag 105 · Alles OK").
+- **Aktor-Icons:** O₂/Sauerstoff nutzt jetzt ein zuverlässiges Icon (`mdi:gas-cylinder`); neuer
+  Aktor-/Control-Typ **Entfeuchter** (eigenes Icon + Farbe) im Art-Dropdown.
+- **Fix:** Editor-Schalter „Einstellungen-Zahnrad" und „Protokoll-Auszug" stehen jetzt korrekt auf AN,
+  passend zur Karte (vorher Mismatch: Karte zeigte das Zahnrad, der Schalter stand auf AUS).
+
 ## [4.4.0] — 2026-06-16
 
 - **Karten-Vorschauen** im Picker zeigen jetzt Demo-Daten (Sensors, Controls, Status, History) –
