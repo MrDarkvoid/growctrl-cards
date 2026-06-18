@@ -5,6 +5,12 @@ Die Karten sind als ein gemeinsames HACS-Bundle versioniert.
 
 ---
 
+## [4.12.1] — 2026-06-17
+
+- **Logo/Bild-URL robuster:** GitHub-`…/blob/…`- bzw. `…/raw/…`-Links (HTML-Seiten) werden automatisch auf die direkte `raw.githubusercontent.com`-Datei umgeschrieben. Logos/Bilder aus einem Repo laden jetzt zuverlässig – und die GitHub-Cookie-Warnungen im Browser entfallen. Lokale `/local/…`-Pfade und andere URLs bleiben unverändert.
+
+---
+
 ## [4.12.0] — 2026-06-17
 
 - **Chart-Zeitachse:** Die X-Achse aller Karten-Charts (Zelt, Hero, Metrik, Sensoren) skaliert jetzt mit der eingestellten Stundenzahl; längere Zeiträume sind feiner aufgelöst.
